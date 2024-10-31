@@ -16,4 +16,12 @@ export default [
   ...pluginVue.configs['flat/essential'],
   ...vueTsEslintConfig(),
   skipFormatting,
+  'vue/block-lang'[
+    ('error',
+    {
+      script: {
+        lang: 'js',
+      },
+    })
+  ],
 ]
