@@ -1,5 +1,7 @@
 <template>
-<div class="header">Header</div>
+  <div class="header">
+    Header
+  </div>
 </template>
 
 <script setup>
@@ -23,12 +25,13 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  width: 100%;
   background-color: #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
   animation: sticky-header linear forwards;
   animation-timeline: scroll();
-  animation-range: 0 100%;
+  animation-range: 0 100vh;
 }
 </style>

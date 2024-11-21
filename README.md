@@ -1,18 +1,15 @@
 # my-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+vue3 + ts + vite + vue-router
+自己个人的项目，会放一些遇见的好玩的东西。
+均是静态页面，没有任何后端接口，包括数据都是自己手动添加更新。
+所有页面尽量都是组件化，尽管没有过多的复用，但是方便学习组件开发，组件通信等，所以components文件夹下内容会很多。
+我会尽量用自己的理解添加注释，方便自己以后回顾，也方便他人学习。
 
-## Recommended IDE Setup
+## 项目内容
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+中国地图，echarts生成，记录自己的旅游省份
+一个呼吸灯盒子边框
 
 ## Project Setup
 
@@ -30,10 +27,4 @@ npm run dev
 
 ```sh
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
