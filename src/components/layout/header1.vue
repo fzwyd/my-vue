@@ -4,8 +4,8 @@
       <nav>
         <a href="#" class="logo">Logo</a>
         <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <router-link to="/data"><li><a href="#">Data</a></li></router-link>
+          <router-link to="/"><li>Home</li></router-link>
+          <router-link to="/data"><li>Data</li></router-link>
           <li><a href="#">Services</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -15,33 +15,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-
-const isSticky = ref(false)
+import { ref, onMounted } from 'vue'
+defineProps({
+  isSticky: Boolean // 通过 props 接收到App.vue传来的值
+})
 const headerHeight = ref(0)
-
-const checkSticky = () => {
-  if (headerHeight.value > 0) {
-    isSticky.value = window.scrollY > headerHeight.value
-  }
-}
 
 onMounted(() => {
   const header = document.querySelector<HTMLElement>('.sticky-header')
   if (header) {
     headerHeight.value = header.offsetHeight
   }
-  window.addEventListener('scroll', checkSticky)
 })
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', checkSticky)
-})
 </script>
 
 <style scoped>
 .sticky-header {
-  position: sticky;
+  width: 100%;
+  position: fixed;
   top: 0;
   z-index: 1000;
   background-color: #ffffff;
@@ -50,8 +42,9 @@ onUnmounted(() => {
 }
 
 .is-sticky {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
 }
 
 .container {

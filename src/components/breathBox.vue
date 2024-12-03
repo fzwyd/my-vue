@@ -9,13 +9,6 @@
   --card-height: 65vh;
   --card-width: calc(var(--card-height) / 1.5);
 }
-body {
-  min-height: 100vh;
-  background: #212534;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  box-sizing: border-box;
-}
 .card {
   background: #191c29;
   width: var(--card-width);

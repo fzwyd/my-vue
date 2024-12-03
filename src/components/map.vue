@@ -56,7 +56,7 @@ onMounted(() => {
             value: true,
             tooltip: {
               show: true,
-              formatter: '郑州<br />洛阳<br />开封<br />焦作<br />登封',
+              formatter: '郑州<br />洛阳<br />开封<br />许昌<br />焦作<br />登封',
             },
           },
           { name: '北京', value: 1, tooltip: { show: true, formatter: '北京' } },
