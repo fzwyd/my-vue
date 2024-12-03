@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import Map from '@/components/map.vue'
+import Map from '@/components/home/map.vue'
 import { ref,onMounted,onUnmounted } from 'vue'
 const emit = defineEmits<{
   (e: 'updateSticky', value: boolean): void
