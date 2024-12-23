@@ -4,15 +4,15 @@
   </div>
 </template>
 
-<style lang="less">
+<style scoped lang="less">
 :root {
   --card-height: 65vh;
   --card-width: calc(var(--card-height) / 1.5);
 }
 .card {
   background: #191c29;
-  width: var(--card-width);
-  height: var(--card-height);
+  width: 200px;
+  height: 300px;
   padding: 3px;
   position: relative;
   border-radius: 6px;

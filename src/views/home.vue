@@ -1,6 +1,8 @@
 <template>
   <div ref="scrollContainer" class="container scroll">
-    <div class="scroll-box"></div>
+    <div class="scroll-box">
+      <viewPort></viewPort>
+    </div>
     <div class="map scroll-box">
       <Map />
     </div>
@@ -13,6 +15,7 @@
 
 <script setup lang="ts">
 import Map from '@/components/home/map.vue'
+import viewPort from '@/components/home/view-port.vue';
 import { ref,onMounted,onUnmounted } from 'vue'
 const emit = defineEmits<{
   (e: 'updateSticky', value: boolean): void
