@@ -7,7 +7,7 @@
           <router-link to="/"><li>Home</li></router-link>
           <router-link to="/data"><li>Data</li></router-link>
           <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+          <router-link to="/test"><li>Test</li></router-link>
         </ul>
       </nav>
     </div>
