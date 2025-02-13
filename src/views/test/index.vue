@@ -1,29 +1,31 @@
 <template>
   <div class="container">
-    <Suspense>
-      <!-- 两种写法都可以 -->
-      <async-com></async-com>
-      <!-- <component :is="asyncCom"></component> -->
-      <template #fallback>
-        <h1>正在加载异步组件...</h1>
-      </template>
-    </Suspense>
+    <keep-alive>
+      <Suspense>
+        <!-- 两种写法都可以 -->
+        <async-com></async-com>
+        <!-- <component :is="asyncCom"></component> -->
+        <template #fallback>
+          <asyncLoading></asyncLoading>
+        </template>
+      </Suspense>
+    </keep-alive>
   </div>
 </template>
 
 <script setup lang="ts">
-import { Suspense, defineAsyncComponent } from 'vue'
+import { onMounted } from 'vue'
 import asyncCom from '@/components/test/async-com.vue'
+import asyncLoading from '@/components/test/async-loading.vue'
 
-const asyncCom1 = defineAsyncComponent({
-  loader: () => import('@/components/test/async-com.vue'),
-  // 加载中
-  loadingComponent: () => import('@/components/test/async-loading.vue'),
-  // 加载失败
-  delay: 200,
-  errorComponent: () => import('@/components/test/async-error.vue'),
-  // 超时
-  timeout: 5000,
+onMounted(() => {
+  const modules = import.meta.glob('/src/utils/*.ts') as Record<string, () => Promise<{ default: () => void }>>
+  for (const path in modules) {
+    modules[path]().then(mod => {
+      console.log(path, mod)
+      mod.default()
+    })
+  }
 })
 </script>
 

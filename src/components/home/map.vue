@@ -44,7 +44,7 @@ onMounted(() => {
     tooltip: {
       show: true,
       padding: [10, 20, 10, 20],
-      formatter: '暂无'
+      formatter: '暂无',
     },
     series: [
       {
@@ -68,7 +68,8 @@ onMounted(() => {
           { name: '湖北', value: 1, tooltip: { show: true, formatter: '武汉<br />黄石' } },
           { name: '山西', value: 1, tooltip: { show: true, formatter: '晋中' } },
           { name: '江苏', value: 1, tooltip: { show: true, formatter: '连云港' } },
-          { name: '天津', value: 0,},
+          { name: '陕西', value: 1, tooltip: { show: true, formatter: '西安' } },
+          { name: '天津', value: 0 },
           { name: '上海', value: 0 },
           { name: '安徽', value: 0 },
           { name: '山东', value: 0 },
@@ -85,7 +86,6 @@ onMounted(() => {
           { name: '吉林', value: 0 },
           { name: '辽宁', value: 0 },
           { name: '河北', value: 0 },
-          { name: '陕西', value: 0 },
           { name: '甘肃', value: 0 },
           { name: '青海', value: 0 },
           { name: '贵州', value: 0 },
