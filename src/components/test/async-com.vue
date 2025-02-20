@@ -6,6 +6,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { h } from 'vue'
+// import { onRenderTracked, onRenderTriggered } from 'vue'
+
 const msg = ref<string>('')
 await new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -17,13 +20,19 @@ await new Promise((resolve, reject) => {
     }
   }, 3000)
 })
-  .then((data:any) => (msg.value = data))
-  .catch(err => {
-    msg.value = err
-    console.log(err)
-  })
+  .then((data: any) => (msg.value = data))
+  // .catch(err => {
+  //   msg.value = err
+  //   throw new Error(err);
+  // })
 
+// onRenderTracked(event => {
+//   debugger
+// })
 
+// onRenderTriggered(event => {
+//   debugger
+// })
 </script>
 
 <style scoped lang="less">
