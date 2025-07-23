@@ -1,4 +1,4 @@
-name: Deploy static content to Pages
+name: Deploy Vue.js to GitHub Pages
 
 on:
   push:
@@ -22,28 +22,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4 # 更新到 v4
+        uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4 # 更新到 v4
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
         with:
-          node-version: 20 # 建议使用最新的 LTS 版本
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci  # 比 npm install 更严格，适合CI环境
 
-      - name: Build
-        run: npm run build
+      - name: Build project
+        run: npm run build  # 这会生成 dist 目录
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3 # 目前最新就是 v3
+      - name: Configure Pages
+        uses: actions/configure-pages@v4  # 必须使用v4
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2 # 更新到最新 v2
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: './dist'
+          path: 'dist'  # Vue项目默认输出目录
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2 # 更新到最新 v2
+        uses: actions/deploy-pages@v2
