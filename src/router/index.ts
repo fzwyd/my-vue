@@ -7,19 +7,29 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: home
+      component: home,
     },
     {
       path: '/data',
-       name: 'data',
-       component: () => import('@/views/data.vue')
+      name: 'data',
+      component: () => import('@/views/data.vue'),
     },
     {
       path: '/test',
       name: 'test',
-      component: () => import('@/views/test/index.vue')
-    }
-  ]
+      component: () => import('@/views/test/index.vue'),
+    },
+    {
+      path: '/mytest',
+      name: 'mytest',
+      component: () => import('@/views/test1.vue'),
+    },
+    {
+      path: '/game',
+      name: 'game',
+      component: () => import('@/views/game.vue'),
+    },
+  ],
 })
 
 export default router
